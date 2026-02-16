@@ -1,0 +1,33 @@
+version: 2
+
+sources:
+  - name: raw
+    database: HEVO_DB
+    schema: RAW__PUBLIC
+    tables:
+      - name: customers
+      - name: orders
+      - name: payments
+
+models:
+  - name: stg_customers
+    description: "Staging model for customers"
+    columns:
+      - name: customer_id
+        tests:
+          - not_null
+          - unique
+
+  - name: stg_orders
+    description: "Staging model for orders"
+
+  - name: stg_payments
+    description: "Staging model for payments"
+
+  - name: customers
+    description: "Final customers mart model"
+    columns:
+      - name: customer_id
+        tests:
+          - not_null
+          - unique
