@@ -1,5 +1,5 @@
 Hevo ELT Assignment – Postgres to Snowflake using dbt
-Overview
+
 
 This project demonstrates an end-to-end ELT pipeline implementation using:
 
@@ -11,7 +11,9 @@ Snowflake as the destination data warehouse
 
 dbt (Data Build Tool) for data transformation
 
-The objective was to ingest raw data into Snowflake and build a transformed customers mart model using dbt following best practices.
+Objective 
+
+Ingest raw data into Snowflake and build a transformed customers mart model using dbt following best practices.
 
 Architecture
 
@@ -42,6 +44,8 @@ models/
 │
 └── schema.yml
 
+
+
 Staging Layer
 
 Cleans and standardizes raw data
@@ -50,8 +54,6 @@ Removes technical columns from Hevo
 
 Renames fields consistently
 
-Mart Layer
-
 Builds the final customers model
 
 Aggregates order and payment information per customer
@@ -59,12 +61,11 @@ Aggregates order and payment information per customer
 Ensures data integrity using tests
 
 Data Models
+
 1. Staging Models
 
 stg_customers
-
 stg_orders
-
 stg_payments
 
 These models reference raw tables from Snowflake using dbt source() definitions.
@@ -97,6 +98,8 @@ Unique
 
 All tests pass successfully.
 
+
+
 Security & Configuration
 
 This project follows secure configuration practices:
@@ -107,14 +110,14 @@ Snowflake password is injected via environment variable:
 
 password: "{{ env_var('SNOWFLAKE_PASSWORD') }}"
 
-
-profiles.yml is stored outside the project directory.
-
 Sensitive information (passwords, access keys, URLs) is excluded from Git tracking via .gitignore.
 
 This ensures compliance with the assignment’s security guidelines.
 
+
+
 How to Run
+
 1. Set Environment Variable
 
 PowerShell:
@@ -149,3 +152,5 @@ Final customers mart built
 Tests implemented and passing
 
 Credentials secured and excluded from repository
+
+
