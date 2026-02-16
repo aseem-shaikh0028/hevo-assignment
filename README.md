@@ -128,6 +128,7 @@ setx SNOWFLAKE_PASSWORD "your_password"
 Restart terminal.
 
 2. Run dbt
+   
 dbt debug
 dbt run
 dbt test
