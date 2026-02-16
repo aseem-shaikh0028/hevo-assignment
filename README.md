@@ -19,7 +19,7 @@ PostgreSQL → Hevo Data → Snowflake (RAW layer) → dbt (Staging + Mart model
 
 Source tables are created in PostgreSQL.
 
-Hevo replicates the tables into Snowflake under the RAW_PUBLIC schema.
+Hevo replicates the tables into Snowflake under the RAW__PUBLIC schema.
 
 dbt builds:
 
